@@ -1,0 +1,88 @@
+<!-- <ion-header class="skin-transparent transparent">
+    <ion-toolbar class="skin-transparent">
+      <ion-title>
+        Table Description
+      </ion-title>
+      <ion-buttons start>
+        <button ion-button icon-only class="circle text-grey-5 button-circle mgr-10 mgl-10" (click)="dismiss()">
+          <ion-icon name="ios-close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <ion-header>
+      <ion-navbar>
+        <ion-title>
+          {{person.meja}}
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button clear item-end class="fs-25">{{person.ttl| number : fractionSize}}</button>
+        </ion-buttons>
+      </ion-navbar>
+    </ion-header>
+  <ion-content>    
+      <ion-grid>
+          <ion-row padding-horizontal align-self-center>
+              
+              <ion-col align-self-center col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                
+                          <!-- Title -->
+                          <ion-label>Guest Name : {{person.namatamu}}</ion-label>
+                          <ion-label>Guest Qty  : {{person.jlmtamu}}</ion-label>
+                          <ion-label>Bel Boy    : {{person.nama}}</ion-label>
+                       
+                       
+              </ion-col>
+              <!---Share Section-->
+              <ion-col align-self-end col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 social>
+                  <!---Facebook button-->
+                  <button ion-button text-capitalize default-button color="primary" (click)="movetable()">Move</button>
+                  <!---Twitter button-->
+                  <button ion-button text-capitalize default-button color="primary" (click)="ordernew()">Order</button>
+                  <!---Google button-->
+                  <button ion-button text-capitalize default-button color="primary" (click)="addwaiters()">Waiters</button>
+                  <!---Pinterest button-->
+                  <button ion-button text-capitalize default-button color="primary" (click)="onclosebill()">Close</button>
+              </ion-col>
+              <!---End Share Section-->
+          </ion-row>
+      </ion-grid>
+      <div>
+          <ion-title>
+              Order List
+            </ion-title>
+          <ion-list no-margin *ngFor="let item of hasilapi let x=index">
+              <ng-container *ngIf="hasilapi!=null; then dataisi else datakosong"></ng-container>
+              <ng-template #dataisi>
+
+                  <ion-item-sliding>
+                      <ion-item>
+                          <!-- Avatar -->
+                          <ion-thumbnail item-start>
+                            <img src="http://mobile.monalisacafe.xyz/assets/gambar/product/{{item.pic}}" alt="" />
+                          </ion-thumbnail>
+                          <!-- Title -->
+                          <h2 item-title text-wrap >{{item.namapro}}</h2>
+                          <!-- Subtitle -->
+                          <p item-subtitle text-wrap class="text-red">{{item.qty | number : fractionSize}} {{item.unit}} x {{item.price | number : fractionSize}}</p>
+                          <p item-subtitle text-wrap class="fs-11">{{item.create_at}}</p>
+                          <button ion-button clear item-end class="fs-15">{{item.total | number : fractionSize}}</button>
+                          <!-- Badge -->
+                          <!-- <div item-content>
+                            <ion-badge class="fs-20">3.000</ion-badge>
+                          </div> -->
+                        </ion-item>
+                   
+                      <ion-item-options>
+                        <button ion-button class="red" (click)="removeItem(x,item)"><ion-icon name="trash"></ion-icon> Delete</button>
+                      </ion-item-options>
+                    </ion-item-sliding>
+                  
+          </ng-template>
+          <ng-template #datakosong>
+              <h3></h3>
+          </ng-template>
+          </ion-list>
+        </div>
+  </ion-content>

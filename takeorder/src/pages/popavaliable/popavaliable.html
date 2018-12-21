@@ -1,0 +1,34 @@
+
+<ion-header class="skin-transparent transparent">
+     <ion-toolbar class="skin-transparent">
+      <ion-title>
+        Open Table
+      </ion-title>
+      <ion-buttons start>
+        <button ion-button icon-only class="circle text-grey-5 button-circle mgr-10 mgl-10" (click)="dismiss()">
+          <ion-icon name="ios-close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="no-scroll"> 
+          <ion-grid>
+              <ion-row align-self-center>
+                  <ion-col align-self-center col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      <!---Input field username-->
+                      <ion-item no-padding transparent>
+                          <ion-label color="dark" stacked>Guest Name</ion-label>
+                          <ion-input required placeholder="username" [(ngModel)]="namatamu" type="text"></ion-input>
+                      </ion-item>
+                      <!---Input field password-->
+                      <ion-item no-padding transparent>
+                          <ion-label color="dark" stacked>Qty Guest</ion-label>
+                          <ion-input required placeholder="qtyguest" [(ngModel)]="jlmtamu" type="number"></ion-input>
+                      </ion-item>
+                      <!---Login button-->
+                      <button ion-button button-clear float-right clear text-capitalize (click)="onsaveopentable()">SAVE</button>
+                    </ion-col>
+                  
+              </ion-row>
+          </ion-grid>
+  </ion-content>

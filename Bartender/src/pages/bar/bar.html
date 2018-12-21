@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title (click)="setprinter()">WELCOME {{namauser}}</ion-title>
+    <ion-buttons right>
+      <button ion-button (click)="keluar()">
+        <ion-icon name="exit" style="font-size: 25px"></ion-icon>
+      </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h2>Avaliable Order</h2>
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content
+      pullingText="Pull to refresh" pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+
+    <div>
+    <ion-grid no-padding>
+      <ion-row  *ngFor="let alldata of databartenders let x=index" >
+          <ion-col col-12>
+          <ng-container *ngIf="alldata!=null; then dataisi else datakosong"></ng-container>
+          <ng-template #dataisi>
+                <ion-card class="card-more-content bdra-5 shadow-3 purple">
+                    <div [ngClass]="{'active' : (alldata.dataunik == true)}" class="wrapper">        
+                      <div class="thumb">
+                          <!-- <img src="assets/img/demo10.jpg"/> -->
+                          <ion-card-content class="black-opct text-white">
+                            <ion-card-title class="text-white uppercase spacing-1 fw-600 fs-18" (click)="printalldata(x)">{{alldata.meja}}</ion-card-title>
+                            <div class="card-subtitle">{{alldata.namatamu}}</div>
+                           
+                            <span class="info-stt text-white inline-block mgt-10">{{alldata.nama}}</span>
+                          </ion-card-content>
+                  
+                          <ion-item class="btn-open-more transparent">
+                            <ion-label class="text-white"><ion-icon name="md-list"></ion-icon></ion-label>
+                            <ion-checkbox [(ngModel)]="alldata.dataunik" class="hidden-checkbox" color="dark"></ion-checkbox>
+                          </ion-item>
+                  
+                      </div>
+                        
+                        <ion-list class="tree mgb-0 white" *ngFor="let dataorder of alldata.order let i= index">
+                            <ng-container *ngIf="dataorder!=null; then isidataorder else kosongdataorder"></ng-container>
+                             <ng-template #isidataorder>
+                               <ion-row> <!-- (click)="onprompt(x,i)"> -->
+                                <button ion-item class="fs-14"> 
+                                  <ion-label class="text-grey-5">{{dataorder.namapro}}</ion-label>
+                                  <ion-badge item-end color="dark" class="fs-12 d-purple bdra-0">{{dataorder.qty | number : fractionSize}} {{dataorder.unit}}</ion-badge>
+                                </button>
+                              </ion-row>
+                            </ng-template>
+                            <ng-template #kosongdataorder>
+                                <h6></h6>
+                            </ng-template>
+                        </ion-list>
+                    </div>
+                  </ion-card>
+          </ng-template>
+          <ng-template #datakosong>
+               <h3></h3>
+          </ng-template>  
+       
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>
+</ion-content>

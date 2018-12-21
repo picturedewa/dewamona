@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>WELCOME {{namauser}}</ion-title>
+    <ion-buttons right>
+        <button ion-button (click)="keluar()">
+          <ion-icon name="exit" style="font-size: 25px"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h2>Available Table</h2>
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content
+      pullingText="Pull to refresh" pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+      <ion-row no-padding >
+       <ion-col col-4 col-sm-3 col-md-6 col-lg-4 col-xl-3 *ngFor="let data of datatemp">
+            <ion-card class="card-img-bg bdra-5 purple" (click)="openModalBasic(data)">
+                <ng-container *ngIf="datatemp!=null; then dataisi else datakosong"></ng-container>
+                <ng-template #dataisi>
+                  <img src="assets/imgs/meja.png"/>
+                  <div class="text-white">{{data.nama}}</div>
+                </ng-template>
+                <ng-template #datakosong>
+                    <h3></h3>
+                </ng-template>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+</ion-content>

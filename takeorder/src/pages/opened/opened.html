@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>WELCOME {{namauser}}</ion-title>
+    <ion-buttons right>
+      <button ion-button (click)="keluar()">
+        <ion-icon name="exit" style="font-size: 25px"></ion-icon>
+      </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h2>List Open Table</h2>
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content
+      pullingText="Pull to refresh" pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div>
+    <ion-list no-margin *ngFor="let item of datatemp">
+        <ng-container *ngIf="datatemp!=null; then dataisi else datakosong"></ng-container>
+        <ng-template #dataisi>
+            <ion-item (click)="openModalBasic(item)">
+              <!-- Avatar -->
+              <ion-avatar item-start class="purple">
+                <img src="assets/imgs/meja.png" alt="" />
+              </ion-avatar>
+             
+              <!-- Title -->
+              <h2 item-title text-wrap>{{item.meja}} / {{item.namatamu}}</h2>
+              <!-- Subtitle -->
+              <p item-subtitle text-wrap>Jumlah Tamu :{{item.jlmtamu}}</p>
+              <p item-subtitle text-wrap>BelBoy : {{item.nama}}</p>
+              <button ion-button clear item-end class="fs-15">{{item.ttl| number : fractionSize}}</button>
+            </ion-item>
+        </ng-template>
+        <ng-template #datakosong>
+            <h3></h3>
+        </ng-template>
+    </ion-list>
+  </div>
+</ion-content>

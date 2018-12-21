@@ -1,0 +1,56 @@
+<!-- Themes Register + logo -->
+<!--Content -->
+
+<ion-content has-header>
+
+  <ion-grid>
+      <ion-row padding-horizontal align-items-start>
+          <ion-col col-12 no-padding>
+              <button ion-button text-capitalize button-clear clear float-right (click)="onSkip()">Skip</button>
+          </ion-col>
+          <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <!---Logo-->
+              <ion-thumbnail>
+                  <img [src]="logo">
+              </ion-thumbnail>
+              <!--Form Title-->
+              <h1 ion-text color="accent" title>Register your new account</h1>
+              <!---Input field username-->
+              <form [formGroup]="myForm" (ngSubmit)="onSave()">
+                    <ion-item no-padding>
+                            <ion-label color="dark" stacked>Nama</ion-label>
+                            <!-- <ion-input required placeholder="nama" type="text" [(ngModel)]="nama"></ion-input> -->
+                            <ion-input type="text" formControlName="nama" name="nama"  placeholder="Name" [(ngModel)]="nama"></ion-input>
+                        </ion-item>
+                        <!---Input field email-->
+                        <ion-item no-padding>
+                            <ion-label color="dark" stacked>Email/Username</ion-label>
+                            <!-- <ion-input required placeholder="username" type="email" [(ngModel)]="username" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required [(ngModel)]="email"></ion-input> -->
+                            <ion-input type="text" formControlName="username" name="username"  placeholder="Email" [(ngModel)]="username"></ion-input>
+                        </ion-item>
+                        <!---Input field password-->
+                        <ion-item no-padding>
+                                <ion-label color="dark" stacked>Password</ion-label>
+                                <!-- <ion-input required placeholder="username" type="email" [(ngModel)]="username" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required [(ngModel)]="email"></ion-input> -->
+                                <ion-input type="password" formControlName="password"  placeholder="Password" name="password" [(ngModel)]="password"></ion-input>
+                            </ion-item>
+                        <ion-item no-padding>
+                            <ion-label color="dark" stacked>Alamat</ion-label>
+                            <!-- <ion-input required placeholder="alamat" type="text" [(ngModel)]="alamat"></ion-input> -->
+                            <ion-input type="text" formControlName="alamat" name="alamat"  placeholder="Alamat" [(ngModel)]="alamat"></ion-input>
+                        </ion-item>
+                        <ion-item no-padding>
+                            <ion-label color="dark" stacked>Tel</ion-label>
+                            <!-- <ion-input required placeholder="tel" type="text" [(ngModel)]="tel"></ion-input> -->
+                            <ion-input type="text" formControlName="tel" name="tel"  placeholder="Phone"  [(ngModel)]="tel"></ion-input>
+                        </ion-item>
+                         <!---Register button-->
+                      <button ion-button margin-top float-right clear button-clear color="red" text-capitalize type="submit">Register</button>
+                    </form>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+

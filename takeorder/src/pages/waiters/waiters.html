@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Add Waiters To {{datameja}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h2>List Waiters</h2>
+
+  <div>
+      <ion-list no-margin *ngFor="let data of datawaiters">
+          <ng-container *ngIf="datawaiters!=null; then dataisi else datakosong"></ng-container>
+          <ng-template #dataisi>
+            <ion-item-sliding>
+              <ion-item>
+                <!-- Avatar -->
+                <ion-thumbnail item-start>
+                  <img src="http://mobile.monalisacafe.xyz/assets/gambar/waiters/{{data.pic}}" alt="" />
+                </ion-thumbnail>
+                <!-- Title -->
+                <h2 item-title text-wrap >{{data.nama}}</h2>
+                <!-- Subtitle -->
+                <p item-subtitle text-wrap class="fs-11">{{data.idwaiters}}</p>
+              </ion-item>
+              <ion-item-options>
+                  <button ion-button color="red" class="red" icon-start (click)="delwaiters(data)" >
+                      <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                    Del
+                  </button>
+                </ion-item-options>
+            </ion-item-sliding>
+      </ng-template>
+      <ng-template #datakosong>
+          <h3></h3>
+      </ng-template>
+      </ion-list>
+    </div>
+    <ion-fab right bottom>
+        <button ion-fab class="button-large" (click)="onfabclick()"><ion-icon name="add"></ion-icon></button>   
+    </ion-fab>
+</ion-content>
+

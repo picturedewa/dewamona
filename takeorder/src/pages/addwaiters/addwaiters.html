@@ -1,0 +1,31 @@
+
+<ion-content padding class="modal-box">
+    <ion-row class="close-modal" (click)="dismiss()"></ion-row>
+    <ion-row class="main-modal bdra-10" col-2>
+      <!-- <div class="modal-box-wrapper"> -->
+        
+        <h4 class="mgb-10">Waiter Avaliable</h4>
+        <div>
+            <ion-list no-margin *ngFor="let data of datawaiters">
+                <ng-container *ngIf="datawaiters!=null; then dataisi else datakosong"></ng-container>
+                <ng-template #dataisi>
+                    <ion-item (click)="savedatawaiters(data)">
+                      <!-- Avatar -->
+                      <ion-thumbnail item-start>
+                        <img src="http://mobile.monalisacafe.xyz/assets/gambar/waiters/{{data.pic}}" alt="" />
+                      </ion-thumbnail>
+                      <!-- Title -->
+                      <h2 item-title text-wrap >{{data.nama}}</h2>
+                      <!-- Subtitle -->
+                      <p item-subtitle text-wrap class="fs-11">{{data.id}}</p>
+                    </ion-item>
+            </ng-template>
+            <ng-template #datakosong>
+                <h3></h3>
+            </ng-template>
+            </ion-list>
+          </div> 
+       
+      <!-- </div> -->
+    </ion-row>
+</ion-content>

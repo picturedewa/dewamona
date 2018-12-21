@@ -1,0 +1,47 @@
+<!-- Themes Login + logo 2 -->
+<ion-content has-header>
+  <ion-grid no-padding >
+    <ion-row padding-horizontal align-self-center>
+      <ion-col align-self-start col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <!-- <button ion-button button-clear text-capitalize clear float-left (click)="onSkip()">Skip</button> -->
+        <button ion-button button-clear text-capitalize clear float-right (click)="onForgot()">ForgotPassword</button>
+      </ion-col>
+      <ion-col align-self-end col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <!---Logo-->
+        <img [src]="logo">
+        <!---Logo Subtitle-->
+        <h2 login-subtitle no-margin>Login to your</h2>
+        <!---Logo Title-->
+        <h1 ion-text color="red" login-title no-margin>Monalisa</h1>
+      </ion-col>
+      <ion-col align-self-start col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <!---Input field username-->
+        <ion-item no-padding margin-top>
+          <ion-label color="dark" stacked>Username</ion-label>
+          <ion-input required type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
+        </ion-item>
+        <!---Input field password-->
+        <ion-item no-padding>
+          <ion-label color="dark" stacked>Password</ion-label>
+          <ion-input required type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <p text-right (click)="onRegister()">Don't have account?</p>
+      </ion-col>
+      
+      <!---Share Section-->
+      <ion-col col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <!---Login button-->
+        
+        <button ion-button default-button full color="secondred" text-capitalize (click)="onLogin()">Login</button>
+        <!---Facebook button-->
+        <!-- <button ion-button default-button full color="red" text-capitalize block color="red"
+        (click)="onEvent('onFacebook')">Login with Google</button> -->
+        </ion-col>
+      <!-- <ion-col col-6 col-sm-6 col-md-6>
+        <button ion-button button-clear clear color="red" text-capitalize (click)="onRegister()">Registrer</button>
+      </ion-col> -->
+      <!---End Share Section-->
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+       {{datameja}} Move Table To
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding>
+    <h2>Avaliable Table</h2>
+    <ion-grid>
+      <ion-row no-padding>
+         <ion-col col-4 col-sm-3 col-md-6 col-lg-4 col-xl-3 *ngFor="let data of datatemp">
+              <ion-card class="card-img-bg bdra-5 purple" (click)="openModalBasic(data.nama)">
+                    <ng-container *ngIf="datatemp!=null; then dataisi else datakosong"></ng-container>
+                    <ng-template #dataisi>
+                        <img src="assets/imgs/meja.png"/>
+                        <div class="text-red">{{data.nama}}</div>
+                        <!-- <h2 gallery-title text-wrap>{{data}}</h2> -->
+                    </ng-template>
+                    <ng-template #datakosong>
+                        <h3></h3>
+                    </ng-template>
+              </ion-card>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+  </ion-content>
