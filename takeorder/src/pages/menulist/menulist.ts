@@ -15,6 +15,7 @@ import { Storage } from '@ionic/storage';
 export class MenulistPage {
   datameja:any;
   noorder:any;
+  idgol:any;
   datatemp : Dataproduct[]=[];
   namauser:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController,
@@ -31,9 +32,11 @@ export class MenulistPage {
   }
   ionViewWillEnter(){
     //console.log('ionViewWillEnter home');
+    this.idgol=this.navParams.get('data');
     this.loaddataproduct();
-    this.datameja=this.navParams.get('data');
-    this.noorder=this.navParams.get('noorder');
+    // this.datameja=this.navParams.get('data');
+    // this.noorder=this.navParams.get('noorder');
+    // console.log(this.idgol);
     this.storage.get("namauser").then((datadevice) => {
       if (datadevice!=null){
           this.namauser=datadevice.toLocaleUpperCase();
@@ -54,7 +57,9 @@ export class MenulistPage {
   loaddataproduct(){
     let loader = this.loadingCtrl.create({content:'Please wait..'});
     loader.present();
-    this.servicealb.loadproduct().subscribe(output=>{
+    // console.log(this.idgol);
+    let datagol={"gol":this.idgol};
+    this.servicealb.loadproduct(datagol).subscribe(output=>{
       //this.datameja=output;
       this.datatemp=output['data'];
      //console.log(this.datameja);

@@ -79,8 +79,9 @@ export class ServiceAlb{
     }
 
      //loadproduct
-     loadproduct(){
-        return this.http.post(this.url+'loadproduct',{},this.options)
+     loadproduct(data){
+        //  console.log(data);
+        return this.http.post(this.url+'loadproduct',JSON.stringify(data),this.options)
         .map(res=>res.json())
         .catch(this.handleError);
     }
@@ -122,6 +123,12 @@ export class ServiceAlb{
 
     cekordbartender(idord){
         return this.http.post(this.url+'delitemord',JSON.stringify(idord),this.options)
+        .map(res=>res.json())
+        .catch(this.handleError);
+    }
+
+    listgol(){
+        return this.http.post(this.url+'listgol',{},this.options)
         .map(res=>res.json())
         .catch(this.handleError);
     }

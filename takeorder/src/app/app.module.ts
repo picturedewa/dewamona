@@ -25,6 +25,8 @@ import { AddwaitersPage } from '../pages/addwaiters/addwaiters';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PindahPage } from '../pages/pindah/pindah';
 import { MenulistPage } from '../pages/menulist/menulist';
+import { ProgolPage } from '../pages/progol/progol';
+import { ProgolorderPage } from '../pages/progolorder/progolorder';
 
 const config = {
   apiKey: "AIzaSyAQGsNJTpapJCsiIlrkfu3WELMpsVgn49I",
@@ -50,7 +52,9 @@ const config = {
     AddwaitersPage,
     TabsPage,
     PindahPage,
-    MenulistPage
+    MenulistPage,
+    ProgolPage,
+    ProgolorderPage
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,9 @@ const config = {
     AddwaitersPage,
     TabsPage,
     PindahPage,
-    MenulistPage
+    MenulistPage,
+    ProgolPage,
+    ProgolorderPage
   ],
   providers: [
     StatusBar,

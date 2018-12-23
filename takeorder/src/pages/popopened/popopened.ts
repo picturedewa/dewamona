@@ -3,8 +3,11 @@ import { IonicPage, NavController, NavParams,AlertController,LoadingController }
 import { Dataord } from '../../class/dataord';
 import { PindahPage } from '../pindah/pindah';
 import { ServiceAlb } from '../../service/servicealb';
-import { NeworderPage } from '../neworder/neworder';
+// import { NeworderPage } from '../neworder/neworder';
 import { WaitersPage } from '../waiters/waiters';
+import { ProgolorderPage } from '../progolorder/progolorder';
+// import { ProgolPage } from '../progol/progol';
+
 
 @IonicPage()
 @Component({
@@ -37,7 +40,8 @@ export class PopopenedPage {
   }
 
   ordernew(){
-    this.navCtrl.push(NeworderPage,{data:this.person.meja,noorder:this.person.idord});
+     //this.navCtrl.push(NeworderPage,{data:this.person.meja,noorder:this.person.idord});
+    this.navCtrl.push(ProgolorderPage,{data:this.person.meja,noorder:this.person.idord});
   }
 
   addwaiters(){
@@ -50,7 +54,7 @@ export class PopopenedPage {
     let loader = this.loadingCtrl.create({content:'Please wait..'});
     loader.present();
     this.servicealb.listprodord(dataorder).subscribe(output=>{
-      console.log(output);
+      //console.log(output);
       this.hasilapi=output['data'];
     
       loader.dismiss();
@@ -61,7 +65,6 @@ export class PopopenedPage {
    }
   }
 
-  
 
   alertHandler(title,message){
     const alert=this.alertCtrl.create({title:title,message:message,buttons: ['ok']});

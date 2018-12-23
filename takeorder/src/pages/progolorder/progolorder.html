@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Golongan Product
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <!-- <h2>Golongan Menu</h2> -->
+  <div>
+    <ion-row class="pdr-5 mgt-5 pdb-10">
+      <ion-col col-6 *ngFor="let data of datatemp">
+          <ng-container *ngIf="datatemp!=null; then dataisi else datakosong"></ng-container>
+          <ng-template #dataisi>
+            <ion-card class="full-width mg-0 shadow-2 featured_item" (click)="loaddatapro(data.id)">
+              <img src="http://mobile.monalisacafe.xyz/assets/gambar/gol/{{data.picture}}"/>
+              <ion-card-content class="pd-5">
+                <ion-card-title class="fs-13 fw-600 pd-0">{{data.nama}}</ion-card-title>
+              </ion-card-content>
+            </ion-card>
+          </ng-template>
+          <ng-template #datakosong>
+              <h3></h3>
+          </ng-template>  
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

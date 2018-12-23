@@ -13,7 +13,7 @@ import { ServiceAlb } from '../../service/servicealb';
 export class NeworderPage {
   datameja:any;
   noorder:any;
-
+  idgol:any;
   datatemp : Dataproduct[]=[];
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController,
     private loadingCtrl:LoadingController, public afAuth: AngularFireAuth,private servicealb:ServiceAlb) {
@@ -28,15 +28,18 @@ export class NeworderPage {
 
   ionViewWillEnter(){
     //console.log('ionViewWillEnter home');
-    this.loaddataproduct();
+    
     this.datameja=this.navParams.get('data');
     this.noorder=this.navParams.get('noorder');
+    this.idgol=this.navParams.get('idgol');
+    this.loaddataproduct();
   }
   
   loaddataproduct(){
     let loader = this.loadingCtrl.create({content:'Please wait..'});
     loader.present();
-    this.servicealb.loadproduct().subscribe(output=>{
+    let datagol={"gol":this.idgol};
+    this.servicealb.loadproduct(datagol).subscribe(output=>{
       //this.datameja=output;
       this.datatemp=output['data'];
      //console.log(this.datameja);
