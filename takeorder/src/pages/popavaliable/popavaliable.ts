@@ -18,7 +18,7 @@ export class PopavaliablePage {
   userid:any;
   constructor(public navCtrl: NavController,public viewCtrl: ViewController, public navParams: NavParams
     ,public afAuth: AngularFireAuth,private servicealb:ServiceAlb,private alertCtrl: AlertController) {
-      this.namameja = this.navParams.get("nama") as string;
+        this.namameja = this.navParams.get("nama") as string;
         this.userid=this.afAuth.auth.currentUser.uid;
   
       // this.userid = this.storage.get('iduser');
