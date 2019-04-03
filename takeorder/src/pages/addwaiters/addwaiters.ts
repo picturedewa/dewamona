@@ -26,7 +26,7 @@ export class AddwaitersPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddwaitersPage',this.noorder);
+    //console.log('ionViewDidLoad AddwaitersPage',this.noorder);
    
   }
   onCallbackEvent = (event: string): void => {
@@ -69,11 +69,11 @@ export class AddwaitersPage {
     let dataorder={"noord":this.noorder,
                     "idwaiters":kodewaiters.id
               };
-    console.log(dataorder);
+    //console.log(dataorder);
     let loader = this.loadingCtrl.create({content:'Please wait..'});
     loader.present();
     this.servicealb.addwaiters(dataorder).subscribe(output=>{
-      console.log(output['data']);
+      //console.log(output['data']);
       if(output['data']){
         this.dismiss();
       }

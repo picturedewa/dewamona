@@ -81,7 +81,7 @@ export class NeworderPage {
                           "total" :kodepro.price * data.Qty,
                           "proid" :kodepro.proid
               };
-              console.log("inidata",dataorder);
+              //console.log("inidata",dataorder);
               if (data.Qty!="" || data.Qty != 0){
                   let loader = this.loadingCtrl.create({content:'Please wait..'});
                   loader.present();

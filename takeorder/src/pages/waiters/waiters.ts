@@ -21,7 +21,7 @@ export class WaitersPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad WaitersPage');
+    //console.log('ionViewDidLoad WaitersPage');
   }
 
   ionViewWillEnter(){
@@ -34,7 +34,7 @@ export class WaitersPage {
 
   loaddatawaiters(){
     let dataorder={"noord":this.noorder};
-    console.log(this.noorder);
+    //console.log(this.noorder);
     let loader = this.loadingCtrl.create({content:'Please wait..'});
     loader.present();
     this.servicealb.loadexitwaiters(dataorder).subscribe(output=>{
@@ -65,7 +65,7 @@ export class WaitersPage {
   }
   delwaiters(kodedata)
   {
-     console.log(kodedata);
+     //console.log(kodedata);
     let dataorder={"noord":kodedata.idord,
                     "idwaiters":kodedata.idwaiters
               };
@@ -73,7 +73,7 @@ export class WaitersPage {
     let loader = this.loadingCtrl.create({content:'Please wait..'});
     loader.present();
     this.servicealb.delwaiters(dataorder).subscribe(output=>{
-      console.log(output['data']);
+      //console.log(output['data']);
       if(output['data']){
         this.loaddatawaiters();
       }
