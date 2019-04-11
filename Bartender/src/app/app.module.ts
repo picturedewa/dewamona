@@ -22,12 +22,12 @@ import { ForgetpasPage } from '../pages/forgetpas/forgetpas';
                                                       //npm install --save @ionic/storage
 
 const config = {
-  apiKey: "AIzaSyAQGsNJTpapJCsiIlrkfu3WELMpsVgn49I",
-  authDomain: "monalisa-78cf2.firebaseapp.com",
-  databaseURL: "https://monalisa-78cf2.firebaseio.com",
+  apiKey: "apikey",
+  authDomain: "firebaseapp.com",
+  databaseURL: "firebaseio.com",
   projectId: "monalisa-78cf2",
   storageBucket: "monalisa-78cf2.appspot.com",
-  messagingSenderId: "542731107094"
+  messagingSenderId: "senderid"
   };
 
 @NgModule({
