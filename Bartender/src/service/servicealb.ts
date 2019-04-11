@@ -7,8 +7,8 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class ServiceAlb{
     data: Observable<any>;
-    // url: string='http://apps.monalisacafe.xyz/dewa/api/';
-     url: string='http://mobile.monalisacafe.xyz/api/';
+    
+     url: string='your_api';
     headers:any;
     options:any;
 
