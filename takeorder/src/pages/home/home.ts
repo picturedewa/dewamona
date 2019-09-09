@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage';
 import { ServiceAlb } from '../../service/servicealb';
 import { TabsPage } from '../tabs/tabs';
 import { LoginPage } from '../login/login';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -14,6 +15,8 @@ export class HomePage {
   hasildb:any;
   constructor(public navCtrl: NavController,public afAuth: AngularFireAuth,private alertCtrl: AlertController,
     public storage: Storage,private servicealb:ServiceAlb) {
+      
+      
       this.loaddata();
 
   }

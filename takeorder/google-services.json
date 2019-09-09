@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "542731107094",
+    "firebase_url": "https://monalisa-78cf2.firebaseio.com",
+    "project_id": "monalisa-78cf2",
+    "storage_bucket": "monalisa-78cf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542731107094:android:e3c38728287c9da3",
+        "android_client_info": {
+          "package_name": "com.monalisacafe.xyz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542731107094-h3ph8ttge32sgl6jqvfu05in0adt5ohf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1iNslfB5yIxYiZQiWvVU6JZA6JU7nQOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542731107094-h3ph8ttge32sgl6jqvfu05in0adt5ohf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

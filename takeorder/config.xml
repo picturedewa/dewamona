@@ -22,6 +22,8 @@
     <preference name="SplashScreen" value="none" />
     <preference name="FadeSplashScreenDuration" value="30" />
     <platform name="android">
+        <!-- <preference name="APPCENTER_APP_SECRET" value="cf7f4f9c-639d-4dd5-9af7-6b9bb53df582" />
+        <resource-file src="google-services.json" target="app/google-services.json" /> -->
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
